@@ -55,9 +55,9 @@ class Resize(object):
             self.img_scale = None
         else:
             if isinstance(img_scale, list):
-                self.img_scale = img_scale
+                self.img_scale = [tuple(i) for i in img_scale]
             else:
-                self.img_scale = [img_scale]
+                self.img_scale = [tuple(img_scale)]
             assert mmcv.is_list_of(self.img_scale, tuple)
 
         if ratio_range is not None:
